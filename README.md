@@ -1,4 +1,4 @@
-# Project System (Test Task)
+# Project System
 
 Готовая система управления товарами
 
