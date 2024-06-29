@@ -1,0 +1,28 @@
+.project-page ul {
+  margin: 30px;
+  margin-bottom: 15px;
+}
+.project-page button {
+  margin: 30px;
+}
+.project-page h1 {
+  margin: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.span-text {
+  color: var(--milk)
+}
+
+.link-item {
+  margin: 30px;
+  margin-top: 15px;
+  width: 220px;
+  color: var(--milk);
+  border: 2px solid var(--milk);
+}
+.link-item:hover {
+  border: 2px solid var(--accent);
+  color: var(--accentBlue);
+}

@@ -1,0 +1,26 @@
+
+#sidebar {
+  min-width: 230px;
+  height: 100vh;
+  background-color: var(--light-dark);
+  padding-top: 20px;
+}
+
+#content {
+  flex: auto;
+  padding: 20px;
+}
+
+.sidebar-link {
+  display: flex;
+  padding: 15px;
+  margin-top: 15px;
+  color: var(--milk);
+  font-size: var(--big-text);
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.sidebar-link:hover {
+  background-color: #555;
+}

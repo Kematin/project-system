@@ -1,0 +1,11 @@
+.title-login {
+  text-align: center;
+  align-items: center;
+}
+
+.login-content .input-field {
+  margin-bottom: 7px;
+  margin-top: 3px;
+  border: 2px solid var(--accentBlue);
+  background-color: transparent;
+}

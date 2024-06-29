@@ -1,0 +1,42 @@
+import logging
+
+from aiogram.webhook.aiohttp_server import SimpleRequestHandler, setup_application
+from aiohttp import web
+from config import config
+from create_bot import app, bot, dp, webhook_path
+from routes.buy_project import buy_project_router
+from routes.main import main_router
+from routes.projects import project_router
+
+
+async def on_startup():
+    await set_webhoock()
+    logging.warning("START BOT")
+
+
+async def set_webhoock():
+    webhook_uri = f"{config.WEBHOOCK_NGROK}{webhook_path}"
+    print(webhook_uri)
+    await bot.set_webhook(webhook_uri)
+
+
+def main() -> None:
+    logging.basicConfig(level=logging.INFO)
+
+    dp.startup.register(on_startup)
+    dp.include_router(main_router)
+    dp.include_router(project_router)
+    dp.include_router(buy_project_router)
+
+    webhook_requests_handler = SimpleRequestHandler(
+        dispatcher=dp,
+        bot=bot,
+    )
+    webhook_requests_handler.register(app, path=webhook_path)
+
+    setup_application(app, dp, bot=bot)
+    web.run_app(app, host="127.0.0.1", port=8080)
+
+
+if __name__ == "__main__":
+    main()

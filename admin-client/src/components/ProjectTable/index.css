@@ -1,0 +1,19 @@
+.table-header-text {
+  font-size: var(--simple-text);
+  font-weight: bold;
+  color: var(--milk);
+}
+
+.table-main-text {
+  color: var(--milk);
+}
+
+.table-main-text a {
+  color: var(--milk);
+  text-decoration: underline;
+}
+
+.boolean-status {
+  align-items: center;
+  margin: 0;
+}

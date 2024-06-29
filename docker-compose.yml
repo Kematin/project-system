@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  api:
+    build: ./projects-api/
+    image: project_api:latest
+    ports:
+      - "9999:9999"
+    env_file:
+      .env
+
+  admin_panel:
+    build: ./admin-client/
+    image: admin_panel:latest
+    ports:
+      - "8787:8787"
+
+  bot:
+    build: ./sell-projects-bot/
+    image: project_bot:latest
+    env_file:
+      .env
